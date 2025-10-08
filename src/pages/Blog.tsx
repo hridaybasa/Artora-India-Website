@@ -1,8 +1,35 @@
-import { Calendar, ArrowRight } from "lucide-react";
+import { useState, FormEvent } from "react";
+import { ArrowRight, Calendar } from "lucide-react";
 import SectionContainer from "../components/ui/SectionContainer";
 import { blogPosts } from "../config/content";
 
 export default function Blog() {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("https://sheetdb.io/api/v1/j5p3f3fguh0jp", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ data: [{ email }] }),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        setEmail("");
+        setTimeout(() => setStatus("idle"), 3000); // hide alert
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      console.error("Error submitting newsletter:", error);
+      setStatus("error");
+    }
+  };
+
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleDateString("en-US", {
@@ -27,6 +54,7 @@ export default function Blog() {
         </p>
       </div>
 
+      {/* Blog Posts */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
         {blogPosts.map((post) => (
           <article
@@ -52,24 +80,24 @@ export default function Blog() {
               <p className="text-white/70 mb-4 leading-relaxed line-clamp-3">
                 {post.excerpt}
               </p>
-              <button className="flex items-center text-purple-400 font-semibold hover:text-purple-300 transition-colors">
-                <a
-                  href={post.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center text-purple-400 font-semibold hover:text-purple-300 transition-colors"
-                >
-                  Read More
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </a>
-              </button>
+              <a
+                href={post.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center text-purple-400 font-semibold hover:text-purple-300 transition-colors"
+              >
+                Read More
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </a>
             </div>
           </article>
         ))}
       </div>
 
+      {/* Newsletter + Topics */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
-        <div className="bg-gradient-to-br from-purple-400/10 to-purple-600/10 border border-purple-400/30 rounded-2xl p-8">
+        {/* Newsletter */}
+        <div className="bg-gradient-to-br from-purple-400/10 to-purple-600/10 border border-purple-400/30 rounded-2xl p-8 relative">
           <h3 className="text-2xl font-bold text-white mb-4">
             Subscribe to Our Newsletter
           </h3>
@@ -77,16 +105,19 @@ export default function Blog() {
             Get exclusive insights, market updates, and early access to featured
             artworks delivered to your inbox.
           </p>
+
+          {/* React form with alerts */}
           <form
+            onSubmit={handleSubmit}
             className="flex flex-col sm:flex-row gap-3"
-            action="https://sheetdb.io/api/v1/j5p3f3fguh0jp"
-            method="POST"
           >
             <input
               type="email"
               name="email"
-              required
               placeholder="Enter your email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-purple-400 transition-colors"
             />
             <button
@@ -96,6 +127,18 @@ export default function Blog() {
               Subscribe
             </button>
           </form>
+
+          {/* Alerts */}
+          {status === "success" && (
+            <div className="absolute bottom-[-3rem] left-1/2 -translate-x-1/2 bg-green-500/90 text-white px-4 py-2 rounded-lg shadow-lg">
+              ✅ Thank you for subscribing!
+            </div>
+          )}
+          {status === "error" && (
+            <div className="absolute bottom-[-3rem] left-1/2 -translate-x-1/2 bg-red-500/90 text-white px-4 py-2 rounded-lg shadow-lg">
+              ⚠️ Something went wrong. Please try again.
+            </div>
+          )}
         </div>
 
         <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
