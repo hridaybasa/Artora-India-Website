@@ -11,11 +11,26 @@ export default function Contact() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Thank you for your inquiry. We will contact you shortly.");
-    setFormData({ name: "", email: "", phone: "", message: "" });
+
+    try {
+      const response = await fetch("https://sheetdb.io/api/v1/wvoqy0ekhvnt2", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ data: [formData] }),
+      });
+
+      if (response.ok) {
+        alert("✅ Thank you for your inquiry. We will contact you shortly.");
+        setFormData({ name: "", email: "", phone: "", message: "" });
+      } else {
+        alert("⚠️ Something went wrong. Please try again later.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("⚠️ Failed to send. Please check your internet connection.");
+    }
   };
 
   const handleChange = (
@@ -97,7 +112,7 @@ export default function Contact() {
                 value={formData.phone}
                 onChange={handleChange}
                 className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-purple-400 transition-colors"
-                placeholder="+91-XXXXXXXXXX"
+                placeholder="+91 XXXXXXXXXX"
               />
             </div>
 

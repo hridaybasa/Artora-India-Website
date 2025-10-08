@@ -77,9 +77,15 @@ export default function Blog() {
             Get exclusive insights, market updates, and early access to featured
             artworks delivered to your inbox.
           </p>
-          <form className="flex flex-col sm:flex-row gap-3">
+          <form
+            className="flex flex-col sm:flex-row gap-3"
+            action="https://sheetdb.io/api/v1/j5p3f3fguh0jp"
+            method="POST"
+          >
             <input
               type="email"
+              name="email"
+              required
               placeholder="Enter your email"
               className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-purple-400 transition-colors"
             />
