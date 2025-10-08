@@ -31,7 +31,7 @@ export default function Blog() {
         {blogPosts.map((post) => (
           <article
             key={post.id}
-            className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 hover:border-amber-400/50 transition-all duration-500 hover:scale-105"
+            className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 hover:border-purple-400/50 transition-all duration-500 hover:scale-105"
           >
             <div className="relative overflow-hidden aspect-video">
               <img
@@ -42,22 +42,22 @@ export default function Blog() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
             </div>
             <div className="p-6">
-              <div className="flex items-center text-amber-400 text-sm mb-3">
+              <div className="flex items-center text-purple-400 text-sm mb-3">
                 <Calendar className="h-4 w-4 mr-2" />
                 {formatDate(post.date)}
               </div>
-              <h3 className="text-xl font-bold text-white mb-3 leading-tight group-hover:text-amber-400 transition-colors">
+              <h3 className="text-xl font-bold text-white mb-3 leading-tight group-hover:text-purple-400 transition-colors">
                 {post.title}
               </h3>
               <p className="text-white/70 mb-4 leading-relaxed line-clamp-3">
                 {post.excerpt}
               </p>
-              <button className="flex items-center text-amber-400 font-semibold hover:text-amber-300 transition-colors">
+              <button className="flex items-center text-purple-400 font-semibold hover:text-purple-300 transition-colors">
                 <a
                   href={post.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center text-amber-400 font-semibold hover:text-amber-300 transition-colors"
+                  className="flex items-center text-purple-400 font-semibold hover:text-purple-300 transition-colors"
                 >
                   Read More
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -69,7 +69,7 @@ export default function Blog() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
-        <div className="bg-gradient-to-br from-amber-400/10 to-amber-600/10 border border-amber-400/30 rounded-2xl p-8">
+        <div className="bg-gradient-to-br from-purple-400/10 to-purple-600/10 border border-purple-400/30 rounded-2xl p-8">
           <h3 className="text-2xl font-bold text-white mb-4">
             Subscribe to Our Newsletter
           </h3>
@@ -81,11 +81,11 @@ export default function Blog() {
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-amber-400 transition-colors"
+              className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-purple-400 transition-colors"
             />
             <button
               type="submit"
-              className="px-6 py-3 bg-amber-400 text-black font-semibold rounded-lg hover:bg-amber-300 transition-all duration-300 hover:scale-105"
+              className="px-6 py-3 bg-purple-400 text-black font-semibold rounded-lg hover:bg-purple-300 transition-all duration-300 hover:scale-105"
             >
               Subscribe
             </button>
@@ -134,7 +134,7 @@ export default function Blog() {
                 href={topic.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 bg-white/10 hover:bg-amber-400/20 border border-white/20 hover:border-amber-400/50 rounded-full text-white/80 hover:text-amber-400 text-sm transition-all duration-300"
+                className="px-4 py-2 bg-white/10 hover:bg-purple-400/20 border border-white/20 hover:border-purple-400/50 rounded-full text-white/80 hover:text-purple-400 text-sm transition-all duration-300"
               >
                 {topic.label}
               </a>

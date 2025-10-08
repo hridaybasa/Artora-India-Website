@@ -18,9 +18,9 @@ export default function About() {
             opportunities for investors, collectors, and institutions to acquire
             works of cultural and financial significance.
           </p>
-          <div className="bg-amber-400/10 border-l-4 border-amber-400 p-6 rounded-r-lg">
+          <div className="bg-purple-400/10 border-l-4 border-purple-400 p-6 rounded-r-lg">
             <p className="text-lg text-white/90 italic">
-              <span className="text-amber-400 font-bold">Our Mission: </span>
+              <span className="text-purple-400 font-bold">Our Mission: </span>
               To empower art as both a cultural cornerstone and a powerful
               investment class.
             </p>
@@ -36,7 +36,7 @@ export default function About() {
           {founders.map((founder, index) => (
             <div
               key={index}
-              className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:border-amber-400/50 transition-all duration-500"
+              className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:border-purple-400/50 transition-all duration-500"
             >
               <div className="relative mb-6 overflow-hidden rounded-xl">
                 <img
@@ -49,7 +49,7 @@ export default function About() {
               <h4 className="text-2xl font-bold text-white mb-2">
                 {founder.name}
               </h4>
-              <p className="text-amber-400 font-semibold mb-4">
+              <p className="text-purple-400 font-semibold mb-4">
                 {founder.role}
               </p>
               <p className="text-white/70 leading-relaxed">{founder.bio}</p>
@@ -69,7 +69,7 @@ export default function About() {
             key={index}
             className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300"
           >
-            <div className="text-4xl font-bold text-amber-400 mb-2">
+            <div className="text-4xl font-bold text-purple-400 mb-2">
               {stat.number}
             </div>
             <div className="text-white/70 text-sm">{stat.label}</div>

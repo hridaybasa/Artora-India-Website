@@ -63,17 +63,17 @@ export default function Navigation() {
               <button
                 key={link.href}
                 onClick={() => scrollToSection(link.href)}
-                className="px-4 py-2 text-sm font-medium text-white/90 hover:text-amber-400 transition-all duration-300 relative group"
+                className="px-4 py-2 text-sm font-medium text-white/90 hover:text-purple-400 transition-all duration-300 relative group"
               >
                 {link.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-400 group-hover:w-full transition-all duration-300" />
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-400 group-hover:w-full transition-all duration-300" />
               </button>
             ))}
           </div>
 
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 text-white hover:text-amber-400 transition-colors"
+            className="lg:hidden p-2 text-white hover:text-purple-400 transition-colors"
           >
             {isMobileMenuOpen ? (
               <X className="h-6 w-6" />
@@ -94,7 +94,7 @@ export default function Navigation() {
             <button
               key={link.href}
               onClick={() => scrollToSection(link.href)}
-              className="block w-full text-left px-4 py-3 text-base font-medium text-white/90 hover:text-amber-400 hover:bg-white/5 rounded transition-all"
+              className="block w-full text-left px-4 py-3 text-base font-medium text-white/90 hover:text-purple-400 hover:bg-white/5 rounded transition-all"
             >
               {link.label}
             </button>

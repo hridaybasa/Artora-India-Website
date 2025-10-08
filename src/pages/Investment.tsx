@@ -47,9 +47,9 @@ export default function Investment() {
         ].map((benefit, index) => (
           <div
             key={index}
-            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:border-amber-400/50 transition-all duration-500 hover:scale-105"
+            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:border-purple-400/50 transition-all duration-500 hover:scale-105"
           >
-            <benefit.icon className="h-10 w-10 text-amber-400 mb-4" />
+            <benefit.icon className="h-10 w-10 text-purple-400 mb-4" />
             <h3 className="text-xl font-bold text-white mb-2">
               {benefit.title}
             </h3>
@@ -67,7 +67,7 @@ export default function Investment() {
         <div className="overflow-x-auto">
           <table className="w-full border-collapse">
             <thead>
-              <tr className="bg-amber-400/10 border-b border-amber-400/30">
+              <tr className="bg-purple-400/10 border-b border-purple-400/30">
                 <th className="px-6 py-4 text-left text-white font-semibold">
                   Asset Class
                 </th>
@@ -93,7 +93,7 @@ export default function Investment() {
                 <tr
                   key={index}
                   className={`border-b border-white/10 hover:bg-white/5 transition-colors ${
-                    index === 0 ? "bg-amber-400/5" : ""
+                    index === 0 ? "bg-purple-400/5" : ""
                   }`}
                 >
                   <td className="px-6 py-4 text-white font-semibold">
@@ -131,7 +131,7 @@ export default function Investment() {
         </div>
       </div>
 
-      <div className="mt-20 bg-gradient-to-r from-amber-400/10 to-amber-600/10 border border-amber-400/30 rounded-2xl p-10">
+      <div className="mt-20 bg-gradient-to-r from-purple-400/10 to-purple-600/10 border border-purple-400/30 rounded-2xl p-10">
         <div className="max-w-4xl mx-auto text-center">
           <h3 className="text-2xl font-bold text-white mb-4">
             The Artoraa Advantage
@@ -149,7 +149,7 @@ export default function Investment() {
               { stat: "60%", label: "UHNW Investors Hold Art in Portfolios" },
             ].map((item, index) => (
               <div key={index} className="bg-black/30 rounded-xl p-6">
-                <div className="text-4xl font-bold text-amber-400 mb-2">
+                <div className="text-4xl font-bold text-purple-400 mb-2">
                   {item.stat}
                 </div>
                 <div className="text-white/70 text-sm">{item.label}</div>

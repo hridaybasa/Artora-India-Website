@@ -96,10 +96,10 @@ export default function Home() {
               return (
                 <div
                   key={index}
-                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:border-amber-400/50 transition-all duration-500 hover:scale-105 group"
+                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:border-purple-400/50 transition-all duration-500 hover:scale-105 group"
                 >
-                  <div className="w-16 h-16 bg-amber-400/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-400/20 transition-colors">
-                    <Icon className="h-8 w-8 text-amber-400" />
+                  <div className="w-16 h-16 bg-purple-400/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-purple-400/20 transition-colors">
+                    <Icon className="h-8 w-8 text-purple-400" />
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-4">
                     {highlight.title}

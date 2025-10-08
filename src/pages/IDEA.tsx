@@ -9,14 +9,14 @@ export default function IDEA() {
       className="bg-gradient-to-b from-black to-neutral-900"
     >
       <div className="text-center mb-16">
-        <div className="inline-flex items-center gap-3 bg-amber-400/10 border border-amber-400/30 rounded-full px-6 py-2 mb-6">
-          <Lightbulb className="h-5 w-5 text-amber-400" />
-          <span className="text-amber-400 font-semibold">Our Initiative</span>
+        <div className="inline-flex items-center gap-3 bg-purple-400/10 border border-purple-400/30 rounded-full px-6 py-2 mb-6">
+          <Lightbulb className="h-5 w-5 text-purple-400" />
+          <span className="text-purple-400 font-semibold">Our Initiative</span>
         </div>
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
           Artoraa IDEA
         </h2>
-        <p className="text-2xl text-amber-400 mb-4">
+        <p className="text-2xl text-purple-400 mb-4">
           Interior Designers & Emerging Artists
         </p>
         <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
@@ -69,10 +69,10 @@ export default function IDEA() {
         ].map((stakeholder, index) => (
           <div
             key={index}
-            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:border-amber-400/50 transition-all duration-500 hover:scale-105"
+            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:border-purple-400/50 transition-all duration-500 hover:scale-105"
           >
-            <div className="w-16 h-16 bg-amber-400/10 rounded-xl flex items-center justify-center mb-6">
-              <stakeholder.icon className="h-8 w-8 text-amber-400" />
+            <div className="w-16 h-16 bg-purple-400/10 rounded-xl flex items-center justify-center mb-6">
+              <stakeholder.icon className="h-8 w-8 text-purple-400" />
             </div>
             <h3 className="text-2xl font-bold text-white mb-3">
               {stakeholder.title}
@@ -83,7 +83,7 @@ export default function IDEA() {
             <ul className="space-y-2">
               {stakeholder.benefits.map((benefit, i) => (
                 <li key={i} className="flex items-center text-white/80 text-sm">
-                  <span className="w-1.5 h-1.5 bg-amber-400 rounded-full mr-3" />
+                  <span className="w-1.5 h-1.5 bg-purple-400 rounded-full mr-3" />
                   {benefit}
                 </li>
               ))}
@@ -100,7 +100,7 @@ export default function IDEA() {
           {ideaArtworks.map((artwork) => (
             <div
               key={artwork.id}
-              className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden hover:bg-white/10 hover:border-amber-400/50 transition-all duration-500 hover:scale-105"
+              className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden hover:bg-white/10 hover:border-purple-400/50 transition-all duration-500 hover:scale-105"
             >
               <div className="relative overflow-hidden aspect-square">
                 <img
@@ -114,7 +114,7 @@ export default function IDEA() {
                 <h4 className="text-lg font-bold text-white mb-1">
                   {artwork.title}
                 </h4>
-                <p className="text-amber-400 text-sm mb-2">{artwork.artist}</p>
+                <p className="text-purple-400 text-sm mb-2">{artwork.artist}</p>
                 <div className="flex justify-between text-white/60 text-xs">
                   <span>{artwork.year}</span>
                   <span>{artwork.medium}</span>
@@ -126,7 +126,7 @@ export default function IDEA() {
       </div>
 
       <div className="mt-20 text-center">
-        <div className="bg-gradient-to-r from-amber-400/10 to-amber-600/10 border border-amber-400/30 rounded-2xl p-10 max-w-4xl mx-auto">
+        <div className="bg-gradient-to-r from-purple-400/10 to-purple-600/10 border border-purple-400/30 rounded-2xl p-10 max-w-4xl mx-auto">
           <h3 className="text-2xl font-bold text-white mb-4">
             Join the IDEA Program
           </h3>
@@ -140,7 +140,7 @@ export default function IDEA() {
               const element = document.querySelector("#contact");
               if (element) element.scrollIntoView({ behavior: "smooth" });
             }}
-            className="px-8 py-4 bg-amber-400 text-black font-semibold rounded-xl hover:bg-amber-300 transition-all duration-300 hover:scale-105"
+            className="px-8 py-4 bg-purple-400 text-black font-semibold rounded-xl hover:bg-purple-300 transition-all duration-300 hover:scale-105"
           >
             Learn More About IDEA
           </button>
