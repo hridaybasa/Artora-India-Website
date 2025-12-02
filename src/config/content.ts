@@ -18,6 +18,7 @@ import blog3 from "../assets/Decorillas-guide-to-using-art-in-interior-design-15
 import artwork1 from "../assets/personas5.jpeg";
 import artwork2 from "../assets/dipayan.jpeg";
 import artwork3 from "../assets/firdaus.jpeg";
+import artwork4 from "../assets/divyaman.jpg";
 
 export const heroContent: HeroContent = {
   backgroundImage: heroImage,
@@ -156,7 +157,7 @@ export const ideaArtworks: ArtworkItem[] = [
   },
   {
     id: "2",
-    title: "Adhisthana from the series Heartland Harmonics",
+    title: "Adhisthana",
     artist: "Dipayan Ghosh",
     image: artwork2,
     year: "2019",
@@ -172,12 +173,11 @@ export const ideaArtworks: ArtworkItem[] = [
   },
   {
     id: "4",
-    title: "Digital Dreams",
-    artist: "Emerging Artist 4",
-    image:
-      "https://images.pexels.com/photos/1266808/pexels-photo-1266808.jpeg?auto=compress&cs=tinysrgb&w=600",
+    title: "EARTH",
+    artist: "Divyaman Singh",
+    image: artwork4,
     year: "2024",
-    medium: "Digital Art Print",
+    medium: "Oil on Canvas",
   },
 ];
 
